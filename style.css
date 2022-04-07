@@ -1,0 +1,102 @@
+@font-face {
+    font-family: "RobotoMono";
+    src: url(Roboto_Mono/RobotoMono-VariableFont_wght.ttf);
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #948d99;
+    height: 100vh;
+}
+
+.navbar ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.navbar li{
+    float: left;
+    border-right: 1px solid #bbb;
+}
+
+.navbar li:last-child{
+    border-right: none;
+}
+
+.navbar li a{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar li a.active{
+    background-color: rgb(101, 106, 104);
+    color: white;
+}
+
+li a:hover:not(.active){
+    background-color: #111;
+}
+
+#title{
+    font-family: 'RobotoMono', sans-serif;
+    font-size: 25px;
+    text-align: center;
+    width: 100%;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 30px;
+    justify-items: center;
+}
+
+.card{
+    height: 300px;
+    width: 400px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 10px 0px #00000030;
+    /*transition: .6s ease-in-out;*/
+    overflow: hidden;
+    align-items: center;
+}
+
+.cardImg{
+    /* position:relative;
+    height: 220px;
+    border-radius: 15px;
+    background-size: cover; */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    border-radius: 15px;
+}
+
+.info{
+    height: 110px;
+    border-radius: 15px;
+    padding-top: 13px;
+    box-sizing: border-box;
+}
+
+.info .title{
+    font-family: 'RobotoMono';
+    text-align: center;
+}
