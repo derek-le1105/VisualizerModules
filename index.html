@@ -6,32 +6,31 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css">
     <title>Algorithms and Visualization</title>
-    <script src="script.js"></script>
+    
   </head>
   <body>
     <div id="root">
       <div class="navbar">
         <ul>
-          <li><a class="active" href="#/home">Home</a></li>
-          <li><a href="https://github.com/derek-le1105">Github</a></li>
-          <li><a href="#/home">aboutme</a></li>
+          <li><a id="home-nav" class="nav active" href="#/home">Home</a></li>
+          <li><a id="sort-nav" class="nav" href="#/sortingVisualizer" onclick="sortingVisualizer();">Sorting Visualizer</a></li>
+          <li><a id="tile-nav" class="nav" href="#/8TilePuzzle" onclick="tilePuzzle();">8 Tile Puzzle</a></li>
         </ul>
       </div>
-      <div id="title">
+      <div id="title-name">
         <h1>Algorithms and Visualization</h1>
       </div>
-
       <div class="container">
         <div id="sorting-card" class="card">
-          <a href="#/sortingVisualizer">
+          <a href="#/sortingVisualizer" onclick="sortingVisualizer();">
             <img class="cardImg" src="/sorting.gif">
           </a>
           <div class="info">
             <h3 class="title">Sorting Visualizer</h3>
           </div>
         </div>
-        <div class="card">
-          <a href="#/8TilePuzzle">
+        <div id="tile-card" class="card">
+          <a href="#/8TilePuzzle" onclick="tilePuzzle();">
             <img class="cardImg" src="/8tile.png">
           </a>
           <div class="info">
@@ -51,4 +50,5 @@
 
     </div>
   </body>
+  <script src="script.js"></script>
 </html>
