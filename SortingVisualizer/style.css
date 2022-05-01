@@ -10,7 +10,7 @@
 }
 
 body{
-    background-color: #948d99;
+    background-color: rgb(212, 209, 209);
     height: 100vh;
 }
 
@@ -42,12 +42,12 @@ body{
     border-width: 0 3px 3px 0;
     display: inline-block;
     padding: 3px;
-  }
+}
 
-  .down {
+.down {
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
-  }
+}
 
 .navbar a.active{
     background-color: rgb(79, 180, 140);
@@ -57,6 +57,7 @@ body{
 .dropdown-nav{
     float: left;
     overflow: hidden;
+    border-right: 1px solid #bbb;
 }
 
 .dropdown-nav .dropdownbtn{
@@ -89,67 +90,67 @@ body{
 }
 
 .dropdown-modules a:hover{
-    background-color: #ddd;
+    background-color: #f9f9f9;
 }
 
 .dropdown-nav:hover .dropdown-modules{
     display: block;
 }
-
-#title-name{
-    font-family: 'RobotoMono', sans-serif;
-    font-size: 25px;
-    text-align: center;
-    width: 100%;
-    padding: 75px;
-}
-
-.container{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 30px;
-    justify-items: center;
-}
-
-.card{
-    height: 300px;
-    width: 400px;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 15px;
-    box-sizing: border-box;
-    box-shadow: 0px 4px 10px 0px #00000030;
-    /*transition: .6s ease-in-out;*/
-    overflow: hidden;
-    align-items: center;
-}
-
-.cardImg{
-    /* position:relative;
-    height: 220px;
-    border-radius: 15px;
-    background-size: cover; */
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    border-radius: 15px;
-}
-
-.info{
-    height: 110px;
-    border-radius: 15px;
-    padding-top: 13px;
-    box-sizing: border-box;
-}
-
-.info .title{
-    font-family: 'RobotoMono';
-    text-align: center;
-}
-
 .hidden{
     display: none;
+}
+
+#sorting-bars{   /*window for sorting the rectangles*/
+    display: flex;
+    color: red;
+    justify-content: center;
+    height: 600px;
+    flex-direction: row;
+    padding: 20px 20px 0px 20px;
+}
+
+.sortItem{
+    width: 20px;
+    background-color: blue;
+    background-clip: content-box;
+    padding: 3px;
+}
+
+
+#sorting-parameters{
+    background-color:#948d99;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    
+}
+
+#sorting-parameters .sort-btns{
+    background-color:#948d99;
+    float:left;
+    display: block;
+    text-align: center;
+    padding: 30px 3%;
+    border: none;
+}
+
+#sorting-parameters .sort-btns:hover{
+    background-color:#736c77;
+}
+
+
+#sorting-parameters .speed-range{
+    display: flex;
+    float: left;
+    align-items: center;
+    padding: 0px 30px;
+}
+
+#sorting-parameters .speed-range p{
+    float: left;
+    font-size: 20px;
+    text-align: center;
+    padding: 0px 15px;
 }
