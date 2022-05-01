@@ -49,9 +49,9 @@ function createNewArray(){
     temp = [];
     currArray = [];
     for(let i = 0; i < 50; i++){
-        let rand = Math.floor(Math.random() * (600 - 20) + 20);
+        let rand = Math.floor(Math.random() * (550 - 20) + 20);
         while(temp.includes(rand))
-            rand = Math.floor(Math.random() * (600 - 20) + 20);
+            rand = Math.floor(Math.random() * (550 - 20) + 20);
         temp.push(rand);
     }
     currArray = temp;
@@ -70,3 +70,16 @@ function generateBars(){
         sortingBars.appendChild(newRect);
     }
 }
+
+sortBtn.addEventListener('click', function(){
+    let barsToSort = document.getElementsByClassName('sortItem')
+    for(let i = 0; i < barsToSort.length-1; ++i){
+        for(let j = 0; j < barsToSort.length-1; ++j){
+            if(barsToSort[j].offsetHeight > barsToSort[j+1].offsetHeight){
+                let temp = barsToSort[j+1].offsetHeight + 'px'
+                barsToSort[j+1].style.height = barsToSort[j].offsetHeight +'px'
+                barsToSort[j].style.height = temp
+            }
+        }
+    }
+})
