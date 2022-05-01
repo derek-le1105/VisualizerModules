@@ -141,14 +141,14 @@ body{
 }
 
 
-#sorting-parameters .speed-range{
+#sorting-parameters .input-range{
     display: flex;
     float: left;
     align-items: center;
     padding: 0px 30px;
 }
 
-#sorting-parameters .speed-range p{
+#sorting-parameters .input-range p{
     float: left;
     font-size: 20px;
     text-align: center;
