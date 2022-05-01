@@ -11,18 +11,23 @@
   <body>
     <div id="root">
       <div class="navbar">
-        <ul>
-          <li><a id="home-nav" class="nav active" href="#/home">Home</a></li>
-          <li><a id="sort-nav" class="nav" href="#/sortingVisualizer" onclick="sortingVisualizer();">Sorting Visualizer</a></li>
-          <li><a id="tile-nav" class="nav" href="#/8TilePuzzle" onclick="tilePuzzle();">8 Tile Puzzle</a></li>
-        </ul>
+        <a id="home-nav" class="nav active" href="./index.html">Home</a>
+        <div class="dropdown-nav">
+          <button class="dropdownbtn">Modules    
+            <i class="arrow down"></i>
+          </button>
+          <div class = "dropdown-modules">
+            <a id="sort-nav" class="nav" href="./SortingVisualizer/sorting.html">Sorting Visualizer</a>
+            <a id="tile-nav" class="nav" href="./8TilePuzzle/tilepuzzle.html">8 Tile Puzzle</a>
+          </div>
+        </div>
       </div>
       <div id="title-name">
         <h1>Algorithms and Visualization</h1>
       </div>
       <div class="container">
         <div id="sorting-card" class="card">
-          <a href="#/sortingVisualizer" onclick="sortingVisualizer();">
+          <a href="./SortingVisualizer/sorting.html">
             <img class="cardImg" src="/sorting.gif">
           </a>
           <div class="info">
@@ -30,7 +35,7 @@
           </div>
         </div>
         <div id="tile-card" class="card">
-          <a href="#/8TilePuzzle" onclick="tilePuzzle();">
+          <a href="./8TilePuzzle/tilepuzzle.html">
             <img class="cardImg" src="/8tile.png">
           </a>
           <div class="info">
