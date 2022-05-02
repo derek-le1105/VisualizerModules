@@ -71,15 +71,54 @@ function generateBars(){
     }
 }
 
+function swap(bar1, bar2){
+    return new Promise((resolve) =>{
+        var temp = bar1.style.transform;
+        bar1.style.transform = bar2.style.transform;
+        bar2.style.transform = temp;
+
+        window.requestAnimationFrame(function() {
+  
+            // For waiting for .25 sec
+            setTimeout(() => {
+                sortingBars.insertBefore(bar2, bar1);
+                resolve();
+            }, 25);
+        });
+    });
+}
+
 sortBtn.addEventListener('click', function(){
-    let barsToSort = document.getElementsByClassName('sortItem')
-    for(let i = 0; i < barsToSort.length-1; ++i){
-        for(let j = 0; j < barsToSort.length-1; ++j){
-            if(barsToSort[j].offsetHeight > barsToSort[j+1].offsetHeight){
-                let temp = barsToSort[j+1].offsetHeight + 'px'
-                barsToSort[j+1].style.height = barsToSort[j].offsetHeight +'px'
-                barsToSort[j].style.height = temp
-            }
-        }
+    switch(sortDecision){
+        case sortType.bubble:
+            bubbleSort();
+            break;
     }
 })
+
+async function bubbleSort(){
+    let barsToSort = document.getElementsByClassName('sortItem')
+    for(let i = 0; i < barsToSort.length; ++i){
+        for(let j = 0; j < barsToSort.length-i-1; ++j){
+
+            barsToSort[j].style.backgroundColor = "#FF4949";
+            barsToSort[j+1].style.backgroundColor = "#FF4949";
+
+            await new Promise((resolve) =>
+                setTimeout(() => {
+                    resolve();
+                }, 10)
+            );
+
+
+            if(barsToSort[j].offsetHeight > barsToSort[j+1].offsetHeight){
+                await swap(barsToSort[j], barsToSort[j+1])
+                barsToSort = document.querySelectorAll('.sortItem')
+            }
+
+            barsToSort[j].style.backgroundColor = "blue";
+            barsToSort[j+1].style.backgroundColor = "blue";
+        }
+        barsToSort[barsToSort.length - i - 1].style.backgroundColor = "green"
+    }
+}
